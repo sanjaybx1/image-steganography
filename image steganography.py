@@ -1,3 +1,4 @@
+
 from PIL import Image
 import pyfiglet
 from colorama import Fore, Style, init
@@ -71,7 +72,7 @@ def encode_enc(newimg, data):
             x += 1
 
 def encode():
-    img = input("Enter image with path or drag and drop the image (with extension):")
+    img = input("Enter image name with path or drag and drop the image (with extension):")
     image = Image.open(img, 'r')
 
     data = input("Enter data to be encoded: ")
@@ -115,6 +116,7 @@ if __name__ == '__main__':
     choice = int(input(":: Welcome to Steganography ::\n1. press 1 to encode\n2. Press 2 to decode\n"))
     if (choice == 1):
         encode()
+        print("successfully encoded!!!")
     elif (choice == 2):
         decoded_message = decode()
         print(f"{Fore.GREEN}Decoded message: {Style.RESET_ALL}{decoded_message}")
